@@ -1,0 +1,13 @@
+plugins { id 'com.android.application' }
+
+android {
+    namespace 'com.samedcanaslan.ozelturkcedersi'
+    compileSdk 36
+    defaultConfig {
+        applicationId 'com.samedcanaslan.ozelturkcedersi'
+        minSdk 23
+        targetSdk 36
+        versionCode 1
+        versionName '1.0'
+    }
+}
