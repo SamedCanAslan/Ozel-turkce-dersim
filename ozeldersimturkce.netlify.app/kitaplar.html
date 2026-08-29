@@ -3,256 +3,27 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Kitap Okuma Listeleri</title>
-
-<style>
-* {
-  box-sizing: border-box;
-}
-
-body {
-  margin: 0;
-  font-family: Arial, sans-serif;
-  background: #f6f7f9;
-  color: #20242a;
-}
-
-.container {
-  max-width: 900px;
-  margin: auto;
-  padding: 30px 18px 50px;
-}
-
-h1 {
-  text-align: center;
-  margin-bottom: 10px;
-}
-
-.subtitle {
-  text-align: center;
-  color: #6b7280;
-  margin-bottom: 35px;
-}
-
-.section-title {
-  font-size: 22px;
-  margin: 30px 0 15px;
-}
-
-.classes {
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  gap: 12px;
-}
-
-.high-school {
-  grid-template-columns: repeat(4, 1fr);
-}
-
-.class-card {
-  background: white;
-  border-radius: 14px;
-  padding: 20px 10px;
-  text-align: center;
-  font-weight: bold;
-  font-size: 16px;
-  cursor: pointer;
-  border: 1px solid #e5e7eb;
-  box-shadow: 0 3px 10px rgba(0,0,0,.05);
-  transition: .2s;
-}
-
-.class-card:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 16px rgba(0,0,0,.10);
-}
-
-.book-list {
-  display: none;
-  margin-top: 18px;
-  background: white;
-  border-radius: 14px;
-  padding: 20px;
-  border: 1px solid #e5e7eb;
-}
-
-.book-list.active {
-  display: block;
-}
-
-.book-list h3 {
-  margin-top: 0;
-}
-
-.book {
-  padding: 12px 0;
-  border-bottom: 1px solid #eee;
-}
-
-.book:last-child {
-  border-bottom: none;
-}
-
-.author {
-  color: #6b7280;
-  font-size: 14px;
-  margin-top: 4px;
-}
-
-.back {
-  display: inline-block;
-  margin-top: 20px;
-  text-decoration: none;
-  color: #555;
-}
-</style>
+<title>Kitaplık</title>
 </head>
-
 <body>
+<h1>📚 Kitaplık</h1>
+<p>Sınıflara göre kitap okuma listeleri</p>
 
-<div class="container">
+<h2>4. Sınıf</h2>
+<p>Kitap listesi hazırlanıyor.</p>
 
-<h1>📚 Kitap Okuma Listeleri</h1>
-<p class="subtitle">
-Sınıfına uygun kitapları keşfet ve okuma listeni oluştur.
-</p>
+<h2>5. Sınıf</h2>
+<p>Kitap listesi hazırlanıyor.</p>
 
-<div class="section-title">📖 Ortaokul</div>
+<h2>6. Sınıf</h2>
+<p>Kitap listesi hazırlanıyor.</p>
 
-<div class="classes">
+<h2>7. Sınıf</h2>
+<p>Kitap listesi hazırlanıyor.</p>
 
-<div class="class-card" onclick="showList('sinif4')">4. Sınıf</div>
-<div class="class-card" onclick="showList('sinif5')">5. Sınıf</div>
-<div class="class-card" onclick="showList('sinif6')">6. Sınıf</div>
-<div class="class-card" onclick="showList('sinif7')">7. Sınıf</div>
-<div class="class-card" onclick="showList('sinif8')">8. Sınıf</div>
+<h2>8. Sınıf</h2>
+<p>Kitap listesi hazırlanıyor.</p>
 
-</div>
-
-<div class="section-title">🎓 Lise</div>
-
-<div class="classes high-school">
-
-<div class="class-card" onclick="showList('lise1')">1. Sınıf</div>
-<div class="class-card" onclick="showList('lise2')">2. Sınıf</div>
-<div class="class-card" onclick="showList('lise3')">3. Sınıf</div>
-<div class="class-card" onclick="showList('lise4')">4. Sınıf</div>
-
-</div>
-
-
-<div id="sinif4" class="book-list">
-<h3>📚 4. Sınıf Kitap Listesi</h3>
-
-<div class="book"><b>Şeker Portakalı</b><div class="author">José Mauro de Vasconcelos</div></div>
-<div class="book"><b>Fadiş</b><div class="author">Gülten Dayıoğlu</div></div>
-<div class="book"><b>Çocuk Kalbi</b><div class="author">Edmondo De Amicis</div></div>
-<div class="book"><b>Harika Çocuk</b><div class="author">Mark Twain</div></div>
-</div>
-
-
-<div id="sinif5" class="book-list">
-<h3>📚 5. Sınıf Kitap Listesi</h3>
-
-<div class="book"><b>Sol Ayağım</b><div class="author">Christy Brown</div></div>
-<div class="book"><b>Martı</b><div class="author">Richard Bach</div></div>
-<div class="book"><b>Define Adası</b><div class="author">Robert Louis Stevenson</div></div>
-<div class="book"><b>Bir Bilim Adamının Romanı</b><div class="author">Oğuz Atay</div></div>
-</div>
-
-
-<div id="sinif6" class="book-list">
-<h3>📚 6. Sınıf Kitap Listesi</h3>
-
-<div class="book"><b>Kaşağı</b><div class="author">Ömer Seyfettin</div></div>
-<div class="book"><b>Falaka</b><div class="author">Ahmet Rasim</div></div>
-<div class="book"><b>Robinson Crusoe</b><div class="author">Daniel Defoe</div></div>
-<div class="book"><b>80 Günde Devriâlem</b><div class="author">Jules Verne</div></div>
-</div>
-
-
-<div id="sinif7" class="book-list">
-<h3>📚 7. Sınıf Kitap Listesi</h3>
-
-<div class="book"><b>Yalnız Efe</b><div class="author">Ömer Seyfettin</div></div>
-<div class="book"><b>Değirmen</b><div class="author">Sabahattin Ali</div></div>
-<div class="book"><b>Pollyanna</b><div class="author">Eleanor H. Porter</div></div>
-<div class="book"><b>Tom Sawyer</b><div class="author">Mark Twain</div></div>
-</div>
-
-
-<div id="sinif8" class="book-list">
-<h3>📚 8. Sınıf Kitap Listesi</h3>
-
-<div class="book"><b>Çalıkuşu</b><div class="author">Reşat Nuri Güntekin</div></div>
-<div class="book"><b>Dokuzuncu Hariciye Koğuşu</b><div class="author">Peyami Safa</div></div>
-<div class="book"><b>Semaver</b><div class="author">Sait Faik Abasıyanık</div></div>
-<div class="book"><b>Kağnı</b><div class="author">Sabahattin Ali</div></div>
-</div>
-
-
-<div id="lise1" class="book-list">
-<h3>📚 Lise 1. Sınıf Kitap Listesi</h3>
-
-<div class="book"><b>Kürk Mantolu Madonna</b><div class="author">Sabahattin Ali</div></div>
-<div class="book"><b>Mai ve Siyah</b><div class="author">Halit Ziya Uşaklıgil</div></div>
-<div class="book"><b>Yaban</b><div class="author">Yakup Kadri Karaosmanoğlu</div></div>
-<div class="book"><b>Araba Sevdası</b><div class="author">Recaizade Mahmut Ekrem</div></div>
-</div>
-
-
-<div id="lise2" class="book-list">
-<h3>📚 Lise 2. Sınıf Kitap Listesi</h3>
-
-<div class="book"><b>İnce Memed</b><div class="author">Yaşar Kemal</div></div>
-<div class="book"><b>Huzur</b><div class="author">Ahmet Hamdi Tanpınar</div></div>
-<div class="book"><b>Bir Bilim Adamının Romanı</b><div class="author">Oğuz Atay</div></div>
-<div class="book"><b>Esir Şehrin İnsanları</b><div class="author">Kemal Tahir</div></div>
-</div>
-
-
-<div id="lise3" class="book-list">
-<h3>📚 Lise 3. Sınıf Kitap Listesi</h3>
-
-<div class="book"><b>Tutunamayanlar</b><div class="author">Oğuz Atay</div></div>
-<div class="book"><b>Bereketli Topraklar Üzerinde</b><div class="author">Orhan Kemal</div></div>
-<div class="book"><b>Aylak Adam</b><div class="author">Yusuf Atılgan</div></div>
-<div class="book"><b>Memleketimden İnsan Manzaraları</b><div class="author">Nazım Hikmet</div></div>
-</div>
-
-
-<div id="lise4" class="book-list">
-<h3>📚 Lise 4. Sınıf Kitap Listesi</h3>
-
-<div class="book"><b>Safahat</b><div class="author">Mehmet Âkif Ersoy</div></div>
-<div class="book"><b>Çile</b><div class="author">Necip Fazıl Kısakürek</div></div>
-<div class="book"><b>Saatleri Ayarlama Enstitüsü</b><div class="author">Ahmet Hamdi Tanpınar</div></div>
-<div class="book"><b>İçimizdeki Şeytan</b><div class="author">Sabahattin Ali</div></div>
-</div>
-
-
-<a href="index.html" class="back">← Ana sayfaya dön</a>
-
-</div>
-
-<script>
-function showList(id) {
-
-  document.querySelectorAll('.book-list').forEach(function(list) {
-    list.classList.remove('active');
-  });
-
-  const selected = document.getElementById(id);
-
-  if (selected) {
-    selected.classList.add('active');
-    selected.scrollIntoView({
-      behavior: 'smooth',
-      block: 'start'
-    });
-  }
-}
-</script>
-
+<a href="index.html">Ana Sayfaya Dön</a>
 </body>
 </html>
