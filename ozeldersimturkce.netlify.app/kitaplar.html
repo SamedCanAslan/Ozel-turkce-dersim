@@ -3,91 +3,256 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="5, 6, 7, 8, 9, 10, 11 ve 12. sınıflar için Türkçe ve edebiyat odaklı kitap okuma önerileri.">
-<title>Kitap Okuma Listesi | Samed Can Aslan</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Literata:opsz,wght@7..72,400;7..72,500;7..72,600&family=Caveat:wght@500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
+<title>Kitap Okuma Listeleri</title>
+
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f6f7f9;
+  color: #20242a;
+}
+
+.container {
+  max-width: 900px;
+  margin: auto;
+  padding: 30px 18px 50px;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.subtitle {
+  text-align: center;
+  color: #6b7280;
+  margin-bottom: 35px;
+}
+
+.section-title {
+  font-size: 22px;
+  margin: 30px 0 15px;
+}
+
+.classes {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 12px;
+}
+
+.high-school {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.class-card {
+  background: white;
+  border-radius: 14px;
+  padding: 20px 10px;
+  text-align: center;
+  font-weight: bold;
+  font-size: 16px;
+  cursor: pointer;
+  border: 1px solid #e5e7eb;
+  box-shadow: 0 3px 10px rgba(0,0,0,.05);
+  transition: .2s;
+}
+
+.class-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0,0,0,.10);
+}
+
+.book-list {
+  display: none;
+  margin-top: 18px;
+  background: white;
+  border-radius: 14px;
+  padding: 20px;
+  border: 1px solid #e5e7eb;
+}
+
+.book-list.active {
+  display: block;
+}
+
+.book-list h3 {
+  margin-top: 0;
+}
+
+.book {
+  padding: 12px 0;
+  border-bottom: 1px solid #eee;
+}
+
+.book:last-child {
+  border-bottom: none;
+}
+
+.author {
+  color: #6b7280;
+  font-size: 14px;
+  margin-top: 4px;
+}
+
+.back {
+  display: inline-block;
+  margin-top: 20px;
+  text-decoration: none;
+  color: #555;
+}
+</style>
 </head>
+
 <body>
-<div class="topline"><div class="wrap top-inner"><span>Türkçe özel ders · Online & yüz yüze</span><a href="https://wa.me/905469578371?text=Merhaba%2C%20kitap%20okuma%20listesi%20hakk%C4%B1nda%20bilgi%20almak%20istiyorum." target="_blank" rel="noopener">WhatsApp'tan bilgi al →</a></div></div>
-<header>
-  <div class="wrap nav">
-    <a href="index.html" class="brand"><span>Samed Can</span> Aslan<span class="brand-mark">.</span></a>
-    <button id="mobile-toggle" aria-label="Menüyü aç/kapat" aria-expanded="false">☰</button>
-    <nav class="links" id="site-nav">
-      <a href="index.html#hakkimda">Hakkımda</a>
-      <a href="index.html#dersler">Dersler</a>
-      <a href="index.html#konular">Konular</a>
-      <a href="index.html#calis">Çalış</a>
-      <a href="kitaplar.html">Kitap Listesi</a>
-      <a class="btn btn-primary nav-cta" href="https://wa.me/905469578371?text=Merhaba%2C%20%C3%B6zel%20T%C3%BCrk%C3%A7e%20dersi%20hakk%C4%B1nda%20bilgi%20almak%20istiyorum." target="_blank" rel="noopener">Ders Talep Et</a>
-    </nav>
-  </div>
-</header>
 
-<main>
-<section class="section reading-hero">
-  <div class="wrap reading-intro">
-    <div class="eyebrow">Kitap Okuma Rehberi</div>
-    <h1>Her sınıfa uygun, <em>iyi bir başlangıç</em>.</h1>
-    <p>Listeyi sınıf seviyesine göre hazırladım. Amaç “çok kitap bitirmek” değil; öğrencinin yaşına ve okuma alışkanlığına uygun kitaplarla düzenli okuma rutini oluşturmak.</p>
-    <div class="reading-note"><span>✦</span> Bir öğrenci kendi seviyesinin biraz üstündeki bir kitabı okuyabiliyorsa, o kitap iyi bir sonraki adımdır.</div>
-  </div>
-</section>
+<div class="container">
 
-<section class="section reading-section">
-<div class="wrap">
-  <div class="reading-grid">
+<h1>📚 Kitap Okuma Listeleri</h1>
+<p class="subtitle">
+Sınıfına uygun kitapları keşfet ve okuma listeni oluştur.
+</p>
 
-    <article class="grade-card"><div class="grade-no">04</div><div class="tag">4. Sınıf</div><h2>Okumayı sevdiren kitaplar</h2><p class="grade-desc">Akıcı, merak uyandıran ve okuma alışkanlığını destekleyen eserler.</p><ul><li><strong>Şimdiki Çocuklar Harika</strong> — Aziz Nesin</li><li><strong>Bir Şeftali Bin Şeftali</strong> — Samed Behrengi</li><li><strong>Çocuk Kalbi</strong> — Edmondo De Amicis</li><li><strong>Charlie'nin Çikolata Fabrikası</strong> — Roald Dahl</li><li><strong>Matilda</strong> — Roald Dahl</li><li><strong>Define Adası</strong> — Robert Louis Stevenson</li></ul><span class="reading-tip">Başlangıç: Günde 10–15 dakika.</span></article>
+<div class="section-title">📖 Ortaokul</div>
 
-    <article class="grade-card"><div class="grade-no">05</div><div class="tag">5. Sınıf</div><h2>Merak ve macera</h2><p class="grade-desc">Olay örgüsünü takip etmeyi ve kelime dağarcığını geliştirmeyi destekleyen seçimler.</p><ul><li><strong>Şeker Portakalı</strong> — José Mauro de Vasconcelos</li><li><strong>Çocuk Kalbi</strong> — Edmondo De Amicis</li><li><strong>Haritada Kaybolmak</strong> — Vladimir Tumanov</li><li><strong>Bir Şeftali Bin Şeftali</strong> — Samed Behrengi</li><li><strong>Charlie'nin Çikolata Fabrikası</strong> — Roald Dahl</li><li><strong>Sol Ayağım</strong> — Christy Brown</li></ul><span class="reading-tip">Orta: Sevdiğin karakteri anlat.</span></article>
+<div class="classes">
 
-    <article class="grade-card"><div class="grade-no">06</div><div class="tag">6. Sınıf</div><h2>Hayal gücü ve keşif</h2><p class="grade-desc">Karakter, olay ve ana fikir üzerinde düşünmeye uygun eserler.</p><ul><li><strong>Matilda</strong> — Roald Dahl</li><li><strong>Martı</strong> — Richard Bach</li><li><strong>Şimdiki Çocuklar Harika</strong> — Aziz Nesin</li><li><strong>Falaka</strong> — Ahmet Rasim</li><li><strong>Pal Sokağı Çocukları</strong> — Ferenc Molnár</li><li><strong>Yaşlı Adam ve Deniz</strong> — Ernest Hemingway</li></ul><span class="reading-tip">Orta: Ana fikri bir cümleyle yaz.</span></article>
+<div class="class-card" onclick="showList('sinif4')">4. Sınıf</div>
+<div class="class-card" onclick="showList('sinif5')">5. Sınıf</div>
+<div class="class-card" onclick="showList('sinif6')">6. Sınıf</div>
+<div class="class-card" onclick="showList('sinif7')">7. Sınıf</div>
+<div class="class-card" onclick="showList('sinif8')">8. Sınıf</div>
 
-    <article class="grade-card featured-grade"><div class="grade-no">07</div><div class="tag">7. Sınıf</div><h2>Düşünme ve sorgulama</h2><p class="grade-desc">Çıkarım, karakter çözümleme ve metnin mesajını fark etmeye yönelik kitaplar.</p><ul><li><strong>Pal Sokağı Çocukları</strong> — Ferenc Molnár</li><li><strong>İçimdeki Müzik</strong> — Sharon M. Draper</li><li><strong>Yaşlı Adam ve Deniz</strong> — Ernest Hemingway</li><li><strong>Yalnız Efe</strong> — Ömer Seyfettin</li><li><strong>Şeker Portakalı</strong> — José Mauro de Vasconcelos</li><li><strong>Bir Bilim Adamının Romanı</strong> — Oğuz Atay</li></ul><span class="reading-tip">İleri: Yazarın vermek istediği mesajı tartış.</span></article>
-
-    <article class="grade-card featured-grade"><div class="grade-no">08</div><div class="tag">8. Sınıf · LGS</div><h2>Paragraf gücü ve akıcı okuma</h2><p class="grade-desc">LGS sürecinde düzenli okuma, çıkarım yapma ve metni hızlı kavrama becerilerini desteklemek için.</p><ul><li><strong>Falaka</strong> — Ahmet Rasim</li><li><strong>Kaşağı ve Seçme Hikâyeler</strong> — Ömer Seyfettin</li><li><strong>Semaver</strong> — Sait Faik Abasıyanık</li><li><strong>Yaşar Ne Yaşar Ne Yaşamaz</strong> — Aziz Nesin</li><li><strong>Yaban</strong> — Yakup Kadri Karaosmanoğlu</li><li><strong>Çalıkuşu</strong> — Reşat Nuri Güntekin</li></ul><span class="reading-tip">LGS: Her gün 15–20 dakika kesintisiz oku.</span></article>
-
-    <article class="grade-card"><div class="grade-no">09</div><div class="tag">Lise 1 · 9. Sınıf</div><h2>Edebiyata geçiş</h2><p class="grade-desc">Roman, hikâye ve anlatım dünyasına daha bilinçli yaklaşmak için.</p><ul><li><strong>Kaşağı ve Seçme Hikâyeler</strong> — Ömer Seyfettin</li><li><strong>Memleket Hikâyeleri</strong> — Refik Halit Karay</li><li><strong>Semaver</strong> — Sait Faik Abasıyanık</li><li><strong>Mai ve Siyah</strong> — Halit Ziya Uşaklıgil</li><li><strong>Dokuzuncu Hariciye Koğuşu</strong> — Peyami Safa</li><li><strong>Çalıkuşu</strong> — Reşat Nuri Güntekin</li></ul><span class="reading-tip">Not: Tür, anlatıcı ve tema üçlüsünü yakala.</span></article>
-
-    <article class="grade-card"><div class="grade-no">10</div><div class="tag">Lise 2 · 10. Sınıf</div><h2>Türler arasında dolaş</h2><p class="grade-desc">Türk edebiyatının farklı dönemlerini ve güçlü anlatıları tanımaya yönelik eserler.</p><ul><li><strong>Kuyucaklı Yusuf</strong> — Sabahattin Ali</li><li><strong>Kürk Mantolu Madonna</strong> — Sabahattin Ali</li><li><strong>İnce Memed</strong> — Yaşar Kemal</li><li><strong>Sinekli Bakkal</strong> — Halide Edib Adıvar</li><li><strong>Huzur</strong> — Ahmet Hamdi Tanpınar</li><li><strong>Memleket Hikâyeleri</strong> — Refik Halit Karay</li></ul><span class="reading-tip">Orta/İleri: Dönem ve dil özelliklerini fark et.</span></article>
-
-    <article class="grade-card"><div class="grade-no">11</div><div class="tag">Lise 3 · 11. Sınıf</div><h2>Derinleş ve karşılaştır</h2><p class="grade-desc">Edebî metinleri düşünsel yönleriyle değerlendirmeye başlayan öğrenciler için.</p><ul><li><strong>Tutunamayanlar</strong> — Oğuz Atay</li><li><strong>Huzur</strong> — Ahmet Hamdi Tanpınar</li><li><strong>Bir Düğün Gecesi</strong> — Adalet Ağaoğlu</li><li><strong>Yaban</strong> — Yakup Kadri Karaosmanoğlu</li><li><strong>Fahrenheit 451</strong> — Ray Bradbury</li><li><strong>1984</strong> — George Orwell</li></ul><span class="reading-tip">İleri: Metni döneminin toplumsal şartlarıyla karşılaştır.</span></article>
-
-    <article class="grade-card"><div class="grade-no">12</div><div class="tag">Lise 4 · 12. Sınıf · TYT–AYT</div><h2>Edebiyat ve sınav dengesi</h2><p class="grade-desc">Yoğun sınav temposunda okuma alışkanlığını sürdürürken klasiklere ve güçlü anlatılara yönelmek için.</p><ul><li><strong>Suç ve Ceza</strong> — Fyodor Dostoyevski</li><li><strong>Madam Bovary</strong> — Gustave Flaubert</li><li><strong>Don Kişot</strong> — Miguel de Cervantes</li><li><strong>Yaprak Dökümü</strong> — Reşat Nuri Güntekin</li><li><strong>Aylak Adam</strong> — Yusuf Atılgan</li><li><strong>Bir Bilim Adamının Romanı</strong> — Oğuz Atay</li></ul><span class="reading-tip">Sınav yılı: Her gün az da olsa okumayı bırakma.</span></article>
-
-  </div>
-  <div class="reading-disclaimer"><strong>Küçük not:</strong> Bunlar zorunlu liste değil, seviyeye göre önerilerdir. Öğrencinin yaşı, okuma düzeyi, ilgi alanı ve okulunun önerileri birlikte değerlendirilmelidir.</div>
 </div>
-</section>
 
-<section class="section reading-routine">
-<div class="wrap routine-box">
-  <div><div class="eyebrow">Okuma Rutini</div><h2>Her gün 15 dakika<br><em>yeterli bir başlangıç.</em></h2></div>
-  <div class="routine-steps">
-    <div><span>01</span><p>Telefonu kenara bırak.</p></div>
-    <div><span>02</span><p>15 dakika kesintisiz oku.</p></div>
-    <div><span>03</span><p>Bir cümleyle ne anladığını yaz.</p></div>
-  </div>
+<div class="section-title">🎓 Lise</div>
+
+<div class="classes high-school">
+
+<div class="class-card" onclick="showList('lise1')">1. Sınıf</div>
+<div class="class-card" onclick="showList('lise2')">2. Sınıf</div>
+<div class="class-card" onclick="showList('lise3')">3. Sınıf</div>
+<div class="class-card" onclick="showList('lise4')">4. Sınıf</div>
+
 </div>
-</section>
-</main>
 
-<footer>
- <div class="wrap footer-grid">
-  <div><a href="index.html" class="brand footer-brand"><span>Samed Can</span> Aslan<span class="brand-mark">.</span></a><p>Türkçeyi anlamak, düşünmek ve daha iyi ifade etmek için.</p></div>
-  <div><h3>Hızlı erişim</h3><a href="index.html#konular">Konu anlatımları</a><a href="index.html#calis">Çalışma alanı</a><a href="kitaplar.html">Kitap listesi</a></div>
-  <div><h3>İletişim</h3><a href="https://wa.me/905469578371?text=Merhaba%2C%20%C3%B6zel%20T%C3%BCrk%C3%A7e%20dersi%20hakk%C4%B1nda%20bilgi%20almak%20istiyorum." target="_blank" rel="noopener">WhatsApp</a></div>
- </div>
- <div class="wrap footer-bottom"><span>© Samed Can Aslan</span><span>Türkçe Özel Ders</span></div>
-</footer>
+
+<div id="sinif4" class="book-list">
+<h3>📚 4. Sınıf Kitap Listesi</h3>
+
+<div class="book"><b>Şeker Portakalı</b><div class="author">José Mauro de Vasconcelos</div></div>
+<div class="book"><b>Fadiş</b><div class="author">Gülten Dayıoğlu</div></div>
+<div class="book"><b>Çocuk Kalbi</b><div class="author">Edmondo De Amicis</div></div>
+<div class="book"><b>Harika Çocuk</b><div class="author">Mark Twain</div></div>
+</div>
+
+
+<div id="sinif5" class="book-list">
+<h3>📚 5. Sınıf Kitap Listesi</h3>
+
+<div class="book"><b>Sol Ayağım</b><div class="author">Christy Brown</div></div>
+<div class="book"><b>Martı</b><div class="author">Richard Bach</div></div>
+<div class="book"><b>Define Adası</b><div class="author">Robert Louis Stevenson</div></div>
+<div class="book"><b>Bir Bilim Adamının Romanı</b><div class="author">Oğuz Atay</div></div>
+</div>
+
+
+<div id="sinif6" class="book-list">
+<h3>📚 6. Sınıf Kitap Listesi</h3>
+
+<div class="book"><b>Kaşağı</b><div class="author">Ömer Seyfettin</div></div>
+<div class="book"><b>Falaka</b><div class="author">Ahmet Rasim</div></div>
+<div class="book"><b>Robinson Crusoe</b><div class="author">Daniel Defoe</div></div>
+<div class="book"><b>80 Günde Devriâlem</b><div class="author">Jules Verne</div></div>
+</div>
+
+
+<div id="sinif7" class="book-list">
+<h3>📚 7. Sınıf Kitap Listesi</h3>
+
+<div class="book"><b>Yalnız Efe</b><div class="author">Ömer Seyfettin</div></div>
+<div class="book"><b>Değirmen</b><div class="author">Sabahattin Ali</div></div>
+<div class="book"><b>Pollyanna</b><div class="author">Eleanor H. Porter</div></div>
+<div class="book"><b>Tom Sawyer</b><div class="author">Mark Twain</div></div>
+</div>
+
+
+<div id="sinif8" class="book-list">
+<h3>📚 8. Sınıf Kitap Listesi</h3>
+
+<div class="book"><b>Çalıkuşu</b><div class="author">Reşat Nuri Güntekin</div></div>
+<div class="book"><b>Dokuzuncu Hariciye Koğuşu</b><div class="author">Peyami Safa</div></div>
+<div class="book"><b>Semaver</b><div class="author">Sait Faik Abasıyanık</div></div>
+<div class="book"><b>Kağnı</b><div class="author">Sabahattin Ali</div></div>
+</div>
+
+
+<div id="lise1" class="book-list">
+<h3>📚 Lise 1. Sınıf Kitap Listesi</h3>
+
+<div class="book"><b>Kürk Mantolu Madonna</b><div class="author">Sabahattin Ali</div></div>
+<div class="book"><b>Mai ve Siyah</b><div class="author">Halit Ziya Uşaklıgil</div></div>
+<div class="book"><b>Yaban</b><div class="author">Yakup Kadri Karaosmanoğlu</div></div>
+<div class="book"><b>Araba Sevdası</b><div class="author">Recaizade Mahmut Ekrem</div></div>
+</div>
+
+
+<div id="lise2" class="book-list">
+<h3>📚 Lise 2. Sınıf Kitap Listesi</h3>
+
+<div class="book"><b>İnce Memed</b><div class="author">Yaşar Kemal</div></div>
+<div class="book"><b>Huzur</b><div class="author">Ahmet Hamdi Tanpınar</div></div>
+<div class="book"><b>Bir Bilim Adamının Romanı</b><div class="author">Oğuz Atay</div></div>
+<div class="book"><b>Esir Şehrin İnsanları</b><div class="author">Kemal Tahir</div></div>
+</div>
+
+
+<div id="lise3" class="book-list">
+<h3>📚 Lise 3. Sınıf Kitap Listesi</h3>
+
+<div class="book"><b>Tutunamayanlar</b><div class="author">Oğuz Atay</div></div>
+<div class="book"><b>Bereketli Topraklar Üzerinde</b><div class="author">Orhan Kemal</div></div>
+<div class="book"><b>Aylak Adam</b><div class="author">Yusuf Atılgan</div></div>
+<div class="book"><b>Memleketimden İnsan Manzaraları</b><div class="author">Nazım Hikmet</div></div>
+</div>
+
+
+<div id="lise4" class="book-list">
+<h3>📚 Lise 4. Sınıf Kitap Listesi</h3>
+
+<div class="book"><b>Safahat</b><div class="author">Mehmet Âkif Ersoy</div></div>
+<div class="book"><b>Çile</b><div class="author">Necip Fazıl Kısakürek</div></div>
+<div class="book"><b>Saatleri Ayarlama Enstitüsü</b><div class="author">Ahmet Hamdi Tanpınar</div></div>
+<div class="book"><b>İçimizdeki Şeytan</b><div class="author">Sabahattin Ali</div></div>
+</div>
+
+
+<a href="index.html" class="back">← Ana sayfaya dön</a>
+
+</div>
+
 <script>
-const toggle=document.getElementById('mobile-toggle');
-const nav=document.getElementById('site-nav');
-if(toggle) toggle.addEventListener('click',()=>{nav.classList.toggle('open');toggle.setAttribute('aria-expanded',nav.classList.contains('open'));});
+function showList(id) {
+
+  document.querySelectorAll('.book-list').forEach(function(list) {
+    list.classList.remove('active');
+  });
+
+  const selected = document.getElementById(id);
+
+  if (selected) {
+    selected.classList.add('active');
+    selected.scrollIntoView({
+      behavior: 'smooth',
+      block: 'start'
+    });
+  }
+}
 </script>
+
 </body>
 </html>
